@@ -1,0 +1,286 @@
+@charset "UTF-8";
+body{
+    font-size: calc(1.7rem + 0.7*(100vw - 320px)/320);
+    font-family: 'Kosugi Maru', sans-serif;
+    color:#333333;
+}
+#wrapper{
+    min-width: 300px;
+    margin: 0 auto;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0b3361;
+    border:1px solid #0b3361;
+}
+
+header{
+    color:white;
+    text-align: center;
+    padding: 10px 0;  
+}
+header a{
+    color: rgb(255, 230, 0);
+}
+main{
+    flex:1;
+    margin-bottom: 10px;
+}
+main a{
+    display: block;
+    padding: 10px;
+    color:#0b3361;
+}
+main a:hover{
+    background-color: rgb(180, 244, 255);
+}
+main aside{
+    margin-bottom: 10px;
+}
+main aside>#menu{
+    color:#ffffff;
+    border:1px solid #0b3361;
+    padding: 5px;
+}
+main aside>#menu>li{
+    text-align: center;
+    border:1px solid #ffffff;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+main aside>#menu>ul>li{
+    margin-left: 10px;
+    background-color: #ffffff;
+    border-bottom:1px solid #dddddd ;
+    margin-bottom: 5px;
+}
+main aside>#menu>ul>li:nth-last-of-type(1){
+    border-bottom:unset;
+}   
+main article{
+    padding: 10px;
+    background-color: white;
+}
+article #notification{
+    margin-bottom: 10px;
+
+}
+article #notification>#n-title{
+    border: 1px solid #0b3361;
+}
+#notification>#n-title>li{
+    border: 1px solid #dddddd;
+}
+#notification>#n-title>li:nth-last-of-type(1){
+    border: unset;
+}
+#notification a{
+    color:#0b3361;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+#notification span{
+    font-size: 10px;
+}
+/*お知らせ表示*/
+#notification>#info{
+    border: 1px solid #333333;
+    padding: 10px;
+    
+}
+#notification>#info>li{
+    padding: 5px;
+}
+#notification>#info>li:nth-of-type(1){
+    margin-bottom: 10px;
+    border: 1px solid #333333;
+    background-color: rgb(255, 237, 234);
+    
+}
+#notification>#info>li:nth-of-type(2){
+    margin-bottom: 10px;
+    background-color: white;
+}
+#notification>#info>li:nth-of-type(3){
+    border-top: 1px solid #aaaaaa;
+}
+#notification>#info>li:nth-of-type(4){
+    border-bottom: 1px solid #aaaaaa;
+}
+/* フォーム */
+article #form dt{
+    background-color: rgb(216, 228, 245);
+    padding: 5px;
+    border: 1px solid #333333;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+article #form dd{
+    margin-bottom: 5px;    
+}
+article #form input{
+    margin-right: 5px;
+}
+#time li{
+    margin-bottom: 10px;
+}
+#time dl{
+    display: flex;
+    background-color: rgb(239, 241, 119);
+    border: 1px solid #333333;
+}
+#time dt{
+    width: 40%;
+    min-width: 150px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+#time dd{
+    width: 60%;
+    padding: 10px;
+    background-color: white;
+}
+/*出勤状況*/
+#time-info{
+    width: 100%;
+}
+#time-info>tbody{
+    font-size: calc(1.3rem + 0.7*(100vw - 320px)/320);
+}
+#time-info td,
+#time-info th{
+    padding: 3px;
+    border: 1px solid #aaaaaa;
+}
+#time-info th{
+    background-color: #0b3361;
+    color: white;
+} 
+#time-info td{
+    text-align: center;
+}
+#time-info td>ul{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#time-info  .border-none{
+    border: none;
+}
+/*リスト*/
+#list_output th{
+    background-color: #0b3361;
+    color:white;
+    border: 1px solid #aaaaaa;
+}
+#list_output td{
+    text-align: center;
+    border: 1px solid #aaaaaa;
+}
+#list_output p{
+    margin-top: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#list_output p>input{
+    margin: 5px;
+}
+/*page*/
+#page{
+    display:flex;
+    align-items: center;
+}
+#page li:nth-of-type(n+2){
+    padding-left:10px;
+}
+footer{
+    color:#ffffff;
+    text-align: center;
+    font-size:10px;
+}
+/*parts*/
+table{
+    border-collapse: collapse;
+}
+.m-bottom5px{
+    margin-bottom: 5px;
+}
+.error{
+    color: red;
+    font-weight: bold;
+}
+input,
+textarea#contents {
+    border: 1px solid black;
+}
+input,
+select{
+    height: 35px;
+    padding-left:5px;
+    font-size: 20px;
+}
+.delete{
+    text-align: center;
+}
+.list td{
+    padding: 5px;
+}
+.pc_only{
+    display: none;
+}
+#time-info{
+    font-size: 14px;
+}
+
+
+/*PC用*/
+@media  (min-width: 1000px){
+    #wrapper{
+        width: 1000px;
+    }
+    header{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        padding: 5px;
+    }
+    main{
+        display:flex;
+    }
+    main aside{
+        flex:1;
+        margin-bottom: 0;
+    }
+    article{
+        flex:3;
+        margin-right: 5px;
+    }
+    /*parts*/
+    .pc_only{
+        display:table-cell;
+    }
+    .pc_flex{
+        display: flex;
+    }
+    .pc_flex>dt,
+    .pc_flex>dd{
+        padding: 5px;
+    }
+    #time-info{
+        font-size: 20px;
+    }
+    .list td{
+        padding: 10px;
+    }
+    .flex-warp{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
