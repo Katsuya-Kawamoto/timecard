@@ -1,0 +1,79 @@
+@charset "UTF-8";
+html{
+    font-size: 62.5%;
+}
+a,
+figure,
+nav, 
+body, 
+div, 
+span, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+acronym, 
+address,
+img,
+q, 
+s, 
+strong,
+b, 
+u, 
+i, 
+center,
+dl, 
+dt, 
+dd, 
+ol, 
+ul, 
+li,
+form, 
+label,
+table, 
+tbody, 
+tfoot, 
+thead, 
+tr, 
+th, 
+td,
+img,
+span,
+textarea,
+input {
+margin: 0;
+padding: 0;
+border: 0;
+box-sizing: border-box;
+}
+header>div>a{
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    display: block;
+    }
+a:hover{
+    text-decoration: underline;
+}
+ol, 
+ul,
+li{
+	list-style: none;
+}
+address{
+    font-style:normal;
+}
+main{
+    display: block;
+}
+.clearfix:after{
+    /* clear-fix */
+   display: block;
+   content: "";
+   clear: both;
+   /* clear-fix */
+}
