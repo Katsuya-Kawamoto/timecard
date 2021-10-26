@@ -1,0 +1,47 @@
+@charset "UTF-8";
+body{
+    font-size: calc(2rem + 0.7*(100vw - 320px)/320);
+    font-family: 'Kosugi Maru', sans-serif;
+}
+#wrapper{
+    min-width: 300px;
+    margin: 0 auto;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+header,
+main{
+    margin-bottom: 10px;
+}
+/*main*/
+main{
+    flex:1;
+}
+main>form>ul{
+    margin: 0 5px;
+}
+/*menu*/
+nav>ul{
+    display: flex;
+    justify-content: flex-end;
+}
+nav>ul>li{
+    padding: 5px;
+}
+/*parts*/
+input{
+    border: 1px solid black;
+}
+.error{
+    color: red;
+    font-weight: bold;
+}
+.m-bottom5px{
+    margin-bottom: 5px;
+}
+@media  (min-width: 1000px){
+    #wrapper{
+        width: 1000px;
+    }
+}
