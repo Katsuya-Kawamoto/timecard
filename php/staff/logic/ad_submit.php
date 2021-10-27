@@ -1,4 +1,8 @@
 <?php
+/*
+    DBへ勤怠情報の書き込み
+*/
+
     $number=$_SESSION["e-id"];
     $key=$input["Year"].$input["Month"].$input["Day"]."_".$number;
 
@@ -42,27 +46,25 @@
     $stmt->bindParam(':over_minutes',$input["over_minutes"]);
     $stmt->execute();
 
-if($over_time_flag){
-    //勤務情報
-    $sql="  INSERT INTO `over_time_reason` (`keey`,`over_time_reason`) 
-            VALUES (:keey,:over_time_reason)";
-    $stmt = connect() -> prepare($sql);
-    $stmt->bindParam(':keey',$key);
-    $stmt->bindParam(':over_time_reason',$input["over_time_reason"]);
-    $stmt->execute();
-}
+    if($over_time_flag){
+        //勤務情報
+        $sql="  INSERT INTO `over_time_reason` (`keey`,`over_time_reason`) 
+                VALUES (:keey,:over_time_reason)";
+        $stmt = connect() -> prepare($sql);
+        $stmt->bindParam(':keey',$key);
+        $stmt->bindParam(':over_time_reason',$input["over_time_reason"]);
+        $stmt->execute();
+    }
 
-if(count($output)>0){
-    //エラーがあった場合は戻す
-    $output["header-sei"]=$_SESSION["header-sei"];
-    $output["e-id"]=$_SESSION['e-id'];
-    $_SESSION=$output;
-    //入力された情報を$outputに返す
-    foreach($input as $key => $value){
-            $output[$key]=$value;
-            }
-    header('Location: attendance_form.php');
-    return;
-}
-
-?>
+    if(count($output)>0){
+        //エラーがあった場合は戻す
+        $output["header-sei"]=$_SESSION["header-sei"];
+        $output["e-id"]=$_SESSION['e-id'];
+        $_SESSION=$output;
+        //入力された情報を$outputに返す
+        foreach($input as $key => $value){
+                $output[$key]=$value;
+                }
+        header('Location: attendance_form.php');
+        return;
+    }

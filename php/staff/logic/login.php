@@ -1,4 +1,8 @@
 <?php
+/*
+    スタッフ側ログインチェック
+*/
+
 require "../logic/session.php";
 $login=new session();
 $login->start();

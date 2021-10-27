@@ -1,5 +1,7 @@
 <?php
-
+/*
+　パスワードリセットフォーム確認
+*/
     $token = filter_input(INPUT_POST, 'csrf_token');
     //トークンがない、もしくは一致しない場合、処理を中止
     if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
@@ -68,4 +70,3 @@
         header('Location: ./pass_reset.php');
         return;
     }
-?>

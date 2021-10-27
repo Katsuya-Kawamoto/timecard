@@ -1,4 +1,7 @@
 <?php 
+/*
+    勤怠入力フォームチェック
+*/
     //前ページデータの取得
     $motourl = $_SERVER['HTTP_REFERER'];
     $path=parse_url($motourl);                      //pathの取得
@@ -27,4 +30,4 @@
         header('Location: '.$address);
         return;
     }
-?>
+

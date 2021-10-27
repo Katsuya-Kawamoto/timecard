@@ -1,4 +1,8 @@
 <?php 
+/*
+    スタッフ側データベース関数
+*/
+
     /**
      * パスワード更新
      * @param  $number  ->  社員番号
@@ -94,4 +98,4 @@
         $result=$stmt->fetch();
         return $result;
     }
-?>
+
