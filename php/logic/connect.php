@@ -1,23 +1,31 @@
 <?php
-require_once 'env.php';
-function connect()
-{
-    $host = DB_HOST;
-    $db   = DB_NAME;
-    $user = DB_USER;
-    $pass = DB_PASS;
+/*データベース接続*/
 
-    $dsn =    $dsn = "mysql:host=$host;dbname=$db;charset=utf8";
-    try {
-        $pdo = new PDO($dsn, $user, $pass, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ]);
-        return $pdo;
-    }catch (PDOException $e) {
-        echo '接続失敗です！'. $e->getMessage();
-        exit();
+    //接続情報
+    require_once 'env.php';
+
+    /**
+     * データベース接続
+     * @param   なし
+     * @return  $pdo    =>  DB接続結果
+     */
+    function connect()
+    {
+        $host = DB_HOST;
+        $db   = DB_NAME;
+        $user = DB_USER;
+        $pass = DB_PASS;
+
+        $dsn =    $dsn = "mysql:host=$host;dbname=$db;charset=utf8";
+        try {
+            $pdo = new PDO($dsn, $user, $pass, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]);
+            return $pdo;
+        }catch (PDOException $e) {
+            echo '接続失敗です！'. $e->getMessage();
+            exit();
+        }
+
     }
-
-}
-?>
